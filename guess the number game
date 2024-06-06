@@ -1,0 +1,60 @@
+1. Guess the Number Game
+Implement a "guess the number" game using a while loop. The program should randomly select a number between 1 and 100, and then it prompts the user to guess the number. The loop continues until the user guesses the number correctly, providing hints ("too high" or "too low") after each guess.
+
+sol: #include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int main()
+{
+	int num, guess, tries = 0;
+	srand(time(0)); 
+	num = rand() % 98 + 1;
+	cout << "Guess My Number Game\n\n";
+	do
+	{
+		cout << "Enter a guess between 0 and 99 : ";
+		cin >> guess;
+		tries++;
+
+		if (guess > num)
+			cout << "Too high!\n\n";
+		else if (guess < num)
+			cout << "Too low!\n\n";
+		else
+			cout << "\nCorrect! You got it in " << tries << " guesses!\n";
+	} while (guess != num);
+
+	return 0;
+}
+
+o/p : Guess My Number Game
+
+Enter a guess between 0 and 99 : 50
+Too low!
+
+Enter a guess between 0 and 99 : 60
+Too low!
+
+Enter a guess between 0 and 99 : 70
+Too low!
+
+Enter a guess between 0 and 99 : 80
+Too low!
+
+Enter a guess between 0 and 99 : 90
+Too low!
+
+Enter a guess between 0 and 99 : 95
+Too high!
+
+Enter a guess between 0 and 99 : 93
+Too high!
+
+Enter a guess between 0 and 99 : 92
+
+Correct! You got it in 8 guesses!
+
+--------------------------------
+Process exited after 30.29 seconds with return value 0
+Press any key to continue . . .
